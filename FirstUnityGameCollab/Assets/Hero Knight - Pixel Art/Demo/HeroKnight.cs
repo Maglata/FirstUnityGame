@@ -8,6 +8,10 @@ public class HeroKnight : MonoBehaviour {
     [SerializeField] float      m_rollForce = 6.0f;
     [SerializeField] bool       m_noBlood = false;
     [SerializeField] GameObject m_slideDust;
+    [Header("Effects")]
+    [SerializeField] GameObject m_RunStopDust;
+    [SerializeField] GameObject m_JumpDust;
+    [SerializeField] GameObject m_LandingDust;
 
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
@@ -16,6 +20,8 @@ public class HeroKnight : MonoBehaviour {
     private Sensor_HeroKnight   m_wallSensorR2;
     private Sensor_HeroKnight   m_wallSensorL1;
     private Sensor_HeroKnight   m_wallSensorL2;
+    private AudioSource         m_audioSource;
+    private AudioManager_PrototypeHero m_audioManager;
     private bool                m_isWallSliding = false;
     private bool                m_grounded = false;
     private bool                m_rolling = false;
@@ -32,6 +38,8 @@ public class HeroKnight : MonoBehaviour {
     {
         m_animator = GetComponent<Animator>();
         m_body2d = GetComponent<Rigidbody2D>();
+        m_audioSource = GetComponent<AudioSource>();
+        m_audioManager = AudioManager_PrototypeHero.instance;
         m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_HeroKnight>();
         m_wallSensorR1 = transform.Find("WallSensor_R1").GetComponent<Sensor_HeroKnight>();
         m_wallSensorR2 = transform.Find("WallSensor_R2").GetComponent<Sensor_HeroKnight>();
@@ -173,6 +181,18 @@ public class HeroKnight : MonoBehaviour {
         }
     }
 
+    void SpawnDustEffect(GameObject dust, float dustXOffset = 0)
+    {
+        if (dust != null)
+        {
+            // Set dust spawn position
+            Vector3 dustSpawnPosition = transform.position + new Vector3(dustXOffset * m_facingDirection, 0.0f, 0.0f);
+            GameObject newDust = Instantiate(dust, dustSpawnPosition, Quaternion.identity) as GameObject;
+            // Turn dust in correct X direction
+            newDust.transform.localScale = newDust.transform.localScale.x * new Vector3(m_facingDirection, 1, 1);
+        }
+    }
+
     // Animation Events
     // Called in slide animation.
     void AE_SlideDust()
@@ -191,5 +211,31 @@ public class HeroKnight : MonoBehaviour {
             // Turn arrow in correct direction
             dust.transform.localScale = new Vector3(m_facingDirection, 1, 1);
         }
+    }
+    void AE_runStop()
+    {
+        m_audioManager.PlaySound("RunStop");
+        // Spawn Dust
+        float dustXOffset = 0.6f;
+        SpawnDustEffect(m_RunStopDust, dustXOffset);
+    }
+
+    void AE_footstep()
+    {
+        m_audioManager.PlaySound("Footstep");
+    }
+
+    void AE_Jump()
+    {
+        m_audioManager.PlaySound("Jump");
+        // Spawn Dust
+        SpawnDustEffect(m_JumpDust);
+    }
+
+    void AE_Landing()
+    {
+        m_audioManager.PlaySound("Landing");
+        // Spawn Dust
+        SpawnDustEffect(m_LandingDust);
     }
 }
