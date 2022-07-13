@@ -1338,9 +1338,9 @@ MonoBehaviour:
   m_sounds:
   - m_name: Footstep
     m_clips:
-    - {fileID: 8300000, guid: 1a631ada4ecd9cf49a88b135aa70c396, type: 3}
-    - {fileID: 8300000, guid: ee00faf8b8432ff40a6e008c84d5ae59, type: 3}
-    - {fileID: 8300000, guid: 9b0833c02b71a294faba6438278d937a, type: 3}
+    - {fileID: 8300000, guid: 35fcd45e56bf7f94c9a71ba440ddc065, type: 3}
+    - {fileID: 8300000, guid: a106ffbc64db6cf4283284e1f942d54b, type: 3}
+    - {fileID: 8300000, guid: a86a7e0d6907ae54fa861a306b6eafba, type: 3}
     volume: 1
     pitch: 1
     m_randomVolumeRange: {x: 0.6, y: 1}
@@ -1354,14 +1354,14 @@ MonoBehaviour:
     m_randomPitchRange: {x: 1, y: 1}
   - m_name: Jump
     m_clips:
-    - {fileID: 8300000, guid: 5a18f2ef7db9f1943bedda13ff85ee89, type: 3}
+    - {fileID: 8300000, guid: e58941d7aea66a547a8b2bf6b79db890, type: 3}
     volume: 1
     pitch: 1.2
     m_randomVolumeRange: {x: 1, y: 1}
     m_randomPitchRange: {x: 1, y: 1}
   - m_name: Landing
     m_clips:
-    - {fileID: 8300000, guid: 5329b99920a6642409627b29d379aff7, type: 3}
+    - {fileID: 8300000, guid: 01b79f72f875eb94b9c73c56deede177, type: 3}
     volume: 1
     pitch: 1
     m_randomVolumeRange: {x: 1, y: 1}
@@ -1439,7 +1439,7 @@ PrefabInstance:
     - target: {fileID: 9043920546160527475, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_JumpDust
       value: 
-      objectReference: {fileID: 8935918012585647707, guid: 652649fcc5d8f2f4aa29f23df91d1e83, type: 3}
+      objectReference: {fileID: 8935918012585647707, guid: 4a4123fbc8b39d441868897a71d2b2b1, type: 3}
     - target: {fileID: 9043920546160527475, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_rollForce
       value: 6
@@ -1447,11 +1447,11 @@ PrefabInstance:
     - target: {fileID: 9043920546160527475, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_LandingDust
       value: 
-      objectReference: {fileID: 9076098953984712191, guid: 10435d63b8fb69e4dbe9d338dbc7c7a6, type: 3}
+      objectReference: {fileID: 9076098953984712191, guid: 0b745be9abb3a6d4dadd8705950196d1, type: 3}
     - target: {fileID: 9043920546160527475, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_RunStopDust
       value: 
-      objectReference: {fileID: 7310271610845027193, guid: 24aca708e3f3b2d428b9d1eeaf44ecc5, type: 3}
+      objectReference: {fileID: 7310271610845027193, guid: 39afca3c109b26049a80bc07593eb271, type: 3}
     - target: {fileID: 9117128348835321587, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_Size.x
       value: 0.73

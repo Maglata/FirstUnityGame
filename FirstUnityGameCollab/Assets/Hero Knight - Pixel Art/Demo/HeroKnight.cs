@@ -66,6 +66,7 @@ public class HeroKnight : MonoBehaviour {
         {
             m_grounded = true;
             m_animator.SetBool("Grounded", m_grounded);
+            AE_Landing();
         }
 
         //Check if character just started falling
@@ -170,7 +171,6 @@ public class HeroKnight : MonoBehaviour {
             m_delayToIdle = 0.05f;
             m_animator.SetInteger("AnimState", 1);
         }
-
         //Idle
         else
         {
@@ -211,13 +211,6 @@ public class HeroKnight : MonoBehaviour {
             // Turn arrow in correct direction
             dust.transform.localScale = new Vector3(m_facingDirection, 1, 1);
         }
-    }
-    void AE_runStop()
-    {
-        m_audioManager.PlaySound("RunStop");
-        // Spawn Dust
-        float dustXOffset = 0.6f;
-        SpawnDustEffect(m_RunStopDust, dustXOffset);
     }
 
     void AE_footstep()
