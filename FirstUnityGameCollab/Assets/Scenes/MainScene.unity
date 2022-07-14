@@ -1284,7 +1284,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 310ed522aceb44648b31343e61becb79, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.05
+  m_Volume: 0.02
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1748,15 +1748,15 @@ MonoBehaviour:
   - m_name: Landing
     m_clips:
     - {fileID: 8300000, guid: 01b79f72f875eb94b9c73c56deede177, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     m_randomVolumeRange: {x: 1, y: 1}
     m_randomPitchRange: {x: 1, y: 1}
   - m_name: Slash
     m_clips:
     - {fileID: 8300000, guid: f118faf2a13167a47b34b177c8779faa, type: 3}
-    volume: 1
-    pitch: 1
+    volume: 0.05
+    pitch: 1.2
     m_randomVolumeRange: {x: 1, y: 1}
     m_randomPitchRange: {x: 1, y: 1}
 --- !u!4 &2097556151
