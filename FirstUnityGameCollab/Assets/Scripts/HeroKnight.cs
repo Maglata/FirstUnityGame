@@ -229,4 +229,9 @@ public class HeroKnight : MonoBehaviour {
         // Spawn Dust
         SpawnDustEffect(_LandingDust);
     }
+
+    void AE_Slash()
+    {
+        _audioManager.PlaySound("Slash");
+    }
 }
