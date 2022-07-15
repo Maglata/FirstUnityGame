@@ -244,4 +244,9 @@ public class HeroKnight : MonoBehaviour {
     {
         _audioManager.PlaySound("Death");
     }
+
+    void AE_Hurt()
+    {
+        _audioManager.PlaySound("Hurt");
+    }
 }
