@@ -1759,6 +1759,41 @@ MonoBehaviour:
     pitch: 1.2
     m_randomVolumeRange: {x: 1, y: 1}
     m_randomPitchRange: {x: 1, y: 1}
+  - m_name: Hit
+    m_clips:
+    - {fileID: 8300000, guid: 88027a4bb4d7f6a4ebba1767a5eb50cf, type: 3}
+    volume: 0.05
+    pitch: 1.2
+    m_randomVolumeRange: {x: 1, y: 1}
+    m_randomPitchRange: {x: 1, y: 1}
+  - m_name: ShieldHit
+    m_clips:
+    - {fileID: 8300000, guid: db57c4fc5270b2a4793e529e37784307, type: 3}
+    volume: 0.05
+    pitch: 1.2
+    m_randomVolumeRange: {x: 1, y: 1}
+    m_randomPitchRange: {x: 1, y: 1}
+  - m_name: Slide
+    m_clips:
+    - {fileID: 8300000, guid: 80d5092c78ede9049947a0fe978a7fcc, type: 3}
+    volume: 0.4
+    pitch: 1.2
+    m_randomVolumeRange: {x: 1, y: 1}
+    m_randomPitchRange: {x: 1, y: 1}
+  - m_name: Hurt
+    m_clips:
+    - {fileID: 8300000, guid: 58c0a8df39f2aa14e8bc1f52dbafb88d, type: 3}
+    volume: 0.05
+    pitch: 1.2
+    m_randomVolumeRange: {x: 1, y: 1}
+    m_randomPitchRange: {x: 1, y: 1}
+  - m_name: Death
+    m_clips:
+    - {fileID: 8300000, guid: 7086b2074ca207a4dbaf04a3c1a0b01b, type: 3}
+    volume: 0.05
+    pitch: 1.2
+    m_randomVolumeRange: {x: 1, y: 1}
+    m_randomPitchRange: {x: 1, y: 1}
 --- !u!4 &2097556151
 Transform:
   m_ObjectHideFlags: 0

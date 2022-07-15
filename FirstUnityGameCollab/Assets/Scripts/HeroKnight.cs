@@ -234,4 +234,14 @@ public class HeroKnight : MonoBehaviour {
     {
         _audioManager.PlaySound("Slash");
     }
+
+    void AE_Slide()
+    {
+        _audioManager.PlaySound("Slide");
+    }
+
+    void AE_Death()
+    {
+        _audioManager.PlaySound("Death");
+    }
 }
