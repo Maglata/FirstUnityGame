@@ -106,7 +106,12 @@ public class HeroKnight : MonoBehaviour {
         // Reset
         if (Input.GetKeyDown("r"))
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("MainScene");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("GameStartScene");
         }
 
         //Death
