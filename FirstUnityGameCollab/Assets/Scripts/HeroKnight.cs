@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class HeroKnight : MonoBehaviour {
 
@@ -101,6 +102,12 @@ public class HeroKnight : MonoBehaviour {
         //Wall Slide
         _isWallSliding = (_wallSensorR1.State() && _wallSensorR2.State()) || (_wallSensorL1.State() && _wallSensorL2.State());
         _animator.SetBool("WallSlide", _isWallSliding);
+
+        // Reset
+        if (Input.GetKeyDown("r"))
+        {
+            SceneManager.LoadScene(1);
+        }
 
         //Death
         if (Input.GetKeyDown("e") && !_rolling)
