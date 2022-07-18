@@ -7,7 +7,7 @@ public class PlayerCombat : MonoBehaviour
 {
     public Transform attackHitbox;
     public float attackRange = 0.5f;
-    public int damage = 40;
+    public int attackDamage = 40;
     public LayerMask enemyLayers;
     private AudioManager_PrototypeHero _audioManager;
 
@@ -35,9 +35,10 @@ public class PlayerCombat : MonoBehaviour
         //damage enemies
         foreach(Collider2D enemy in hitEnemies)
         {
-
+            enemy.GetComponent<EnemyController>().ETakeDamage(attackDamage);
+            AE_Hit();
         }
-        AE_Hit();
+        
     }
 
     private void OnDrawGizmosSelected()
