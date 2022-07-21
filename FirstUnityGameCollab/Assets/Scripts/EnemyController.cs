@@ -4,34 +4,29 @@ using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 using CodeMonkey.HealthSystemCM;
+using System.Diagnostics;
 
 public class EnemyController : MonoBehaviour, IGetHealthSystem
 {
     private Animator _animator;
+    private Rigidbody2D body2D;
     public int Health = 100;
     int currentHealth;
     private AudioManager_PrototypeHero _audioManager;
     private HealthSystem healthSystem;
 
-
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = Health;
+        body2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _audioManager = AudioManager_PrototypeHero.instance;
-        
     }
 
     void Awake()
     {
         healthSystem = new HealthSystem(Health);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void ETakeDamage(int damage)
