@@ -6,10 +6,12 @@ using UnityEngine;
 public class PatrolAI : MonoBehaviour
 {
     private Rigidbody2D _body;
+    private Animator _animator;
     public bool isPatrolling;
     private bool shouldFlip;
     public Transform groundCheck;
     public Collider2D bodyCollider;
+    public LayerMask heroLayer;
     public LayerMask groundLayer;
     public float speed;
 
@@ -17,6 +19,7 @@ public class PatrolAI : MonoBehaviour
     void Start()
     {
         _body = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
        isPatrolling = true;
     }
 
@@ -39,12 +42,19 @@ public class PatrolAI : MonoBehaviour
 
     private void Patrol()
     {
-        if (shouldFlip)// || bodyCollider.IsTouchingLayers(groundLayer))
+        if (shouldFlip || bodyCollider.IsTouchingLayers(groundLayer))
         {
             Flip();
         }
 
+        if (bodyCollider.IsTouchingLayers(heroLayer))
+        {
+            _animator.SetInteger("AnimState", 0);
+            return;
+        }
+
         _body.velocity = new Vector2(-speed * Time.fixedDeltaTime, _body.velocity.y);
+        _animator.SetInteger("AnimState", 2);
     }
 
     private void Flip()

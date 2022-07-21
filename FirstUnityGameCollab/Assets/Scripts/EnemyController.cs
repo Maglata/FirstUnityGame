@@ -9,7 +9,6 @@ using System.Diagnostics;
 public class EnemyController : MonoBehaviour, IGetHealthSystem
 {
     private Animator _animator;
-    private Rigidbody2D body2D;
     public int Health = 100;
     int currentHealth;
     private AudioManager_PrototypeHero _audioManager;
@@ -19,7 +18,6 @@ public class EnemyController : MonoBehaviour, IGetHealthSystem
     void Start()
     {
         currentHealth = Health;
-        body2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _audioManager = AudioManager_PrototypeHero.instance;
     }
@@ -47,6 +45,7 @@ public class EnemyController : MonoBehaviour, IGetHealthSystem
 
     private async void DestroyEnemy()
     {
+        GetComponent<PatrolAI>().enabled = false;
         await Task.Delay(1000);
         Object.Destroy(gameObject);
     }
